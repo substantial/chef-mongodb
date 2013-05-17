@@ -42,6 +42,9 @@ define :mongodb_instance, :mongodb_type => "mongod" , :action => [:enable, :star
   configserver_nodes = params[:configserver]
 
   replicaset = params[:replicaset]
+
+  log params
+
   if type == "shard"
     if replicaset.nil?
       replicaset_name = nil
